@@ -1,0 +1,117 @@
+﻿<Window x:Class="CheatingReminder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cheating Reminder" 
+        Height="520" MaxHeight="520" MinHeight="520" 
+        Width="620" MaxWidth="620" MinWidth="620"
+        WindowState="Normal" WindowStyle="SingleBorderWindow">
+    <Grid Background="#FF242424">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   FontFamily="SegoeUI"
+                   FontSize="40"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#FCFFF1">Cheating Reminder</TextBlock>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Row="0"
+                         Background="#82B518" 
+                         Margin="23,31,10,24"
+                         Text="Process name..."
+                         FontFamily="SegoeUI"
+                         FontSize="25"
+                         Foreground="#FCFFF1"
+                         Padding="5 12 0 0"
+                         GotFocus="TextBox_GotFocus"
+                         LostFocus="TextBox_LostFocus"
+                         Name="ProcessToAdd"/>
+                <Border Grid.Row="1"
+                        BorderBrush="#70312A"
+                        Background="#D83C3D"
+                        Name="AddButton" Margin="154,25,10,100">
+                    <TextBlock FontFamily="SegoeUI"
+                               FontSize="25"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="#FCFFF1">Add</TextBlock>
+                </Border>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ScrollViewer Grid.Row="0" 
+                              BorderBrush="#70312A"
+                              Background="#82B518"
+                              Margin="10,31,24,10"
+                              Padding="5 5 5 5">
+                    <StackPanel Name="TaskList">
+
+                    </StackPanel>
+
+                </ScrollViewer>
+
+                <CheckBox Content="Select all" 
+                          Grid.Row="1"
+                          Name="SelectAll"
+                          FontFamily="SegoeUI"
+                          FontSize="16"
+                          Foreground="#FCFFF1"
+                          Checked="TaskCheckBox_Changed"
+                          Unchecked="TaskCheckBox_Changed"
+                          Margin="10 0 0 0"></CheckBox>
+
+                <Border Grid.Row="1" 
+                        BorderBrush="#70312A"
+                        Background="#D83C3D"
+                        Name="KillButton" 
+                        Margin="157,18,24,13">
+                    <TextBlock FontFamily="SegoeUI"
+                               FontSize="25"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="#FCFFF1">Kill</TextBlock>
+                </Border>
+            </Grid>
+        </Grid>
+        <TextBlock Grid.Row="2" 
+                   FontFamily="SegoeUI"
+                   FontSize="25"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#FCFFF1">Code more, cheat less</TextBlock>
+    </Grid>
+</Window>
